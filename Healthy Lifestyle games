@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthy Lifestyle Game</title>
+</head>
+<body>
+    <h1>Healthy Lifestyle Game</h1>
+    <div id="game">
+        <p>Welcome to the Healthy Lifestyle Game!</p>
+        <button onclick="morningRoutine()">Start Game</button>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function morningRoutine() {
+            let choice = prompt("Good morning! What will you do first?\n1. Drink a glass of water\n2. Skip hydration");
+            if (choice == "1") {
+                score += 10;
+                alert("Great! Hydration is important for your body.");
+            } else {
+                score -= 5;
+                alert("Skipping hydration? Not the best choice.");
+            }
+            foodChoice();
+        }
+
+        function foodChoice() {
+            let choice = prompt("Time for lunch. What will you eat?\n1. A healthy salad\n2. Fast food");
+            if (choice == "1") {
+                score += 15;
+                alert("Good choice! A balanced meal keeps you energized.");
+            } else {
+                score -= 10;
+                alert("Fast food may taste good, but it’s not the best for your body.");
+            }
+            exercise();
+        }
+
+        function exercise() {
+            let choice = prompt("Evening exercise time!\n1. Go for a 30-minute run\n2. Watch TV instead");
+            if (choice == "1") {
+                score += 20;
+                alert("Well done! Exercise is key to a healthy lifestyle.");
+            } else {
+                score -= 10;
+                alert("Skipping exercise? That's a missed opportunity.");
+            }
+            endGame();
+        }
+
+        function endGame() {
+            alert("Your total score is: " + score);
+            if (score > 20) {
+                alert("Congratulations! You are living a healthy lifestyle!");
+            } else {
+                alert("Keep working on those healthy habits!");
+            }
+        }
+    </script>
+</body>
+</html>
